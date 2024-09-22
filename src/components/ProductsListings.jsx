@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import Product from './Product'
+import { Link } from 'react-router-dom'
+import Spinner from './Spinner'
 
 const ProductsListings = () => {
   const [products, setProducts] = useState([])
   const [visibleCount, setVisibleCount] = useState(6)
+  const [loading, setLoading] = useState(true)
 
   const visibleProducts = products.slice(0, visibleCount)
 
@@ -17,6 +20,7 @@ const ProductsListings = () => {
       } catch (error) {
         console.log('Error fetching products', error)
       } finally {
+        setLoading(false)
         console.log('Done fetching products')
         console.log(products)
       }
@@ -38,11 +42,16 @@ const ProductsListings = () => {
         >
           Recent Listings
         </h2>
-        <div className="grid grid-cols-3 gap-6">
-          {visibleProducts.map((product) => (
-            <Product key={product.id} productListing={product} />
-          ))}
-        </div>
+
+        {loading ? (
+          <Spinner loading={loading} />
+        ) : (
+          <div className="grid grid-cols-3 gap-6">
+            {visibleProducts.map((product) => (
+              <Product key={product.id} productListing={product} />
+            ))}
+          </div>
+        )}
       </div>
       <div className="w-full text-center my-16">
         {visibleCount < products.length ? (
@@ -53,12 +62,12 @@ const ProductsListings = () => {
             View More
           </button>
         ) : (
-          <a
-            href="#products"
+          <Link
+            to="Homepage"
             className="bg-slate-300 w-1/3 px-8 py-4 rounded-lg shadow-sm font-semibold"
           >
             No more products to display.. Back to the top.
-          </a>
+          </Link>
         )}
       </div>
     </section>

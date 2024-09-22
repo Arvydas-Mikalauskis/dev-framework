@@ -32,8 +32,12 @@
   font-weight: 500;
 }
 
-.nav-link:hover {
+.active-link {
   color: #4b9cee;
+}
+
+.nav-link:hover {
+  scale: 1.05;
 }
 
 .search-input {

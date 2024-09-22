@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Product = ({ productListing }) => {
   const hasDiscount = productListing.price > productListing.discountedPrice
@@ -33,12 +33,12 @@ const Product = ({ productListing }) => {
             ) : (
               <p className="text-lg font-semibold">{productListing.price}</p>
             )}
-            <a
-              href={`/product/${productListing.id}`}
+            <Link
+              to={`/product/${productListing.id}`}
               className="bg-slate-300 font-semibold shadow-md rounded-lg px-4 py-2 ml-4"
             >
               View Product
-            </a>
+            </Link>
           </div>
         </div>
       </div>
