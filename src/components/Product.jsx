@@ -1,14 +1,11 @@
 import { Link } from 'react-router-dom'
+import { calculateDiscount } from '../utils/price'
 
 const Product = ({ productListing }) => {
-  const hasDiscount = productListing.price > productListing.discountedPrice
-  const discountedPercentage = hasDiscount
-    ? Math.round(
-        ((productListing.price - productListing.discountedPrice) /
-          productListing.price) *
-          100
-      )
-    : 0
+  const { hasDiscount, discountedPercentage } = calculateDiscount(
+    productListing.price,
+    productListing.discountedPrice
+  )
 
   return (
     <div className="bg-white rounded-xl shadow-md relative">

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, useLoaderData } from 'react-router-dom'
-
+import { calculateDiscount } from '../../utils/price'
+import RelatedProducts from '../RelatedProducts'
 import { MdStarRate } from 'react-icons/md'
 
 const ProductPage = () => {
@@ -20,6 +21,11 @@ const ProductPage = () => {
     setShowReviews(true)
   }
 
+  const { hasDiscount, discountedPercentage } = calculateDiscount(
+    product.data.price,
+    product.data.discountedPrice
+  )
+
   return (
     <>
       <section className="mt-24 pt-16 pl-16">
@@ -34,7 +40,25 @@ const ProductPage = () => {
           </div>
           <div className="flex w-full flex-col items-center gap-2">
             <h1 className="text-3xl font-semibold">{product.data.title}</h1>
-            <div className="flex gap-4 mt-6 items-center text-lg ">
+            <div className="flex items-center mt-4 gap-2">
+              <h2 className="text-lg font-semibold">Price:</h2>
+              {hasDiscount ? (
+                <>
+                  <p className="font-semibold text-lg text-red-500 line-through">
+                    From: {product.data.price}$
+                  </p>
+                  <p className="font-semibold text-lg">
+                    Now: {product.data.discountedPrice}$
+                  </p>
+                  <p className="italic ml-2 p-2 bg-green-300 font-semibold shadow-md rounded-md ">
+                    Save {discountedPercentage}%!
+                  </p>
+                </>
+              ) : (
+                <p className="text-lg font-semibold">{product.data.price}</p>
+              )}
+            </div>
+            <div className="flex gap-4 mt-3 items-center text-lg ">
               <div className="flex items-center text-gray-600">
                 <p className="italic">
                   <span>User rating:</span> {product.data.rating}
@@ -81,9 +105,16 @@ const ProductPage = () => {
                 )}
               </div>
             </div>
+            <div className="pt-12">
+              <button className="bg-slate-400 px-4 py-2 rounded-lg shadow-md uppercase">
+                Add to cart
+              </button>
+            </div>
           </div>
         </div>
-        <div></div>
+        <div className="mt-28">
+          <RelatedProducts />
+        </div>
       </section>
     </>
   )
