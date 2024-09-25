@@ -8,6 +8,8 @@ import Homepage from './components/pages/Homepage'
 import MainLayout from './components/layout/MainLayout'
 import NotFoundPage from './components/pages/NotFoundPage'
 import ProductPage, { productLoader } from './components/pages/Productpage'
+import CartPage from './components/pages/CartPage'
+import ContactPage from './components/pages/ContactPage'
 
 import './App.css'
 
@@ -21,6 +23,8 @@ function App() {
           element={<ProductPage />}
           loader={productLoader}
         />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )

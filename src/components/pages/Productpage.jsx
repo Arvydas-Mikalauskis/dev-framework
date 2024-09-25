@@ -1,12 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useParams, useLoaderData } from 'react-router-dom'
 import { calculateDiscount } from '../../utils/price'
 import RelatedProducts from '../RelatedProducts'
 import { MdStarRate } from 'react-icons/md'
+import { CartContext } from '../Cart'
 
 const ProductPage = () => {
   const { id } = useParams()
   const product = useLoaderData()
+
+  const { cartItems, addToCart } = useContext(CartContext)
 
   const [showDescription, setShowDescription] = useState(true)
   const [showReviews, setShowReviews] = useState(false)
@@ -106,7 +109,10 @@ const ProductPage = () => {
               </div>
             </div>
             <div className="pt-12">
-              <button className="bg-slate-400 px-4 py-2 rounded-lg shadow-md uppercase">
+              <button
+                onClick={() => addToCart(product.data)}
+                className="bg-slate-400 px-4 py-2 rounded-lg shadow-md uppercase"
+              >
                 Add to cart
               </button>
             </div>

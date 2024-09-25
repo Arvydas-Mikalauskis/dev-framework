@@ -1,6 +1,6 @@
 import { TiHome } from 'react-icons/ti'
 import { IoIosContacts } from 'react-icons/io'
-import { TbShoppingCartHeart } from 'react-icons/tb'
+import CartIcon from './CartIcon'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
@@ -12,11 +12,11 @@ const Navbar = () => {
         <NavLink to="/" className={linkClass}>
           <TiHome className="text-2xl" /> <span>Home</span>
         </NavLink>
-        <NavLink to="/Contact" className={linkClass}>
+        <NavLink to="/contact" className={linkClass}>
           <IoIosContacts className="text-2xl" /> <span>Contact Us</span>
         </NavLink>
         <NavLink to="/cart" className={linkClass}>
-          <TbShoppingCartHeart className="text-2xl" /> <span>Cart</span>
+          <CartIcon /> <span>Cart</span>
         </NavLink>
       </div>
     </nav>
