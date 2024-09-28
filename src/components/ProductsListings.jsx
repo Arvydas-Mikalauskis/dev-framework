@@ -5,7 +5,7 @@ import Spinner from './Spinner'
 
 const ProductsListings = () => {
   const [products, setProducts] = useState([])
-  const [visibleCount, setVisibleCount] = useState(6)
+  const [visibleCount, setVisibleCount] = useState(8)
   const [loading, setLoading] = useState(true)
 
   const visibleProducts = products.slice(0, visibleCount)
@@ -30,23 +30,23 @@ const ProductsListings = () => {
   }, [])
 
   const handleViewMore = () => {
-    setVisibleCount((prev) => prev + 6)
+    setVisibleCount((prev) => prev + 4)
   }
 
   return (
     <section className="px-4 py-20">
       <div className="container-xl lg:container m-auto">
         <h2
-          id="products"
-          className="text-2xl font-semibold text-red-400 mb-6 pl-6"
+          id="featured-products"
+          className="text-xl font-medium uppercase  mb-6 pl-12  text-slate-600"
         >
-          Recent Listings
+          Featured Products
         </h2>
 
         {loading ? (
           <Spinner loading={loading} />
         ) : (
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             {visibleProducts.map((product) => (
               <Product key={product.id} productListing={product} />
             ))}
@@ -55,19 +55,13 @@ const ProductsListings = () => {
       </div>
       <div className="w-full text-center my-16">
         {visibleCount < products.length ? (
-          <button
-            onClick={handleViewMore}
-            className="bg-slate-400 w-1/3 px-8 py-4 rounded-lg shadow-sm font-semibold"
-          >
+          <button onClick={handleViewMore} className="view-moreProducts-btn">
             View More
           </button>
         ) : (
-          <Link
-            to="Homepage"
-            className="bg-slate-300 w-1/3 px-8 py-4 rounded-lg shadow-sm font-semibold"
-          >
-            No more products to display.. Back to the top.
-          </Link>
+          <a href="#featured-products" className="view-moreProducts-btn">
+            No more products to display.. Back to the top
+          </a>
         )}
       </div>
     </section>

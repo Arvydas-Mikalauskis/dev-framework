@@ -1,3 +1,14 @@
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+  z-index: -20;
+}
+
 .gradient {
   height: fit-content;
   z-index: -20;
@@ -5,15 +16,15 @@
   max-width: 640px;
   background-image: radial-gradient(
       at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
+      hsla(215, 70%, 25%, 1) 0px,
+      transparent 50%
     ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    radial-gradient(at 97% 21%, rgb(0, 106, 205) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, rgb(152, 33, 45) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, rgb(241, 249, 24) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, rgb(43, 201, 215) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(229, 62, 81) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(4, 53, 91) 0px, transparent 50%);
   position: absolute;
   content: '';
   width: 100%;
@@ -33,7 +44,7 @@
 }
 
 .active-link {
-  color: #4b9cee;
+  @apply text-teal-600;
 }
 
 .nav-link:hover {
@@ -50,4 +61,16 @@
 
 .form-input {
   @apply border rounded-md shadow-md w-full p-2 mt-1 border-gray-200  py-2.5 pl-6   text-sm  font-medium focus:border-2 focus:border-yellow-300 focus:border-opacity-70 focus:outline-none focus:ring-0;
+}
+
+.hero-text {
+  @apply bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent;
+}
+
+.hero-subtitle {
+  @apply bg-gradient-to-r from-slate-900 to-slate-600 bg-clip-text text-transparent;
+}
+
+.view-moreProducts-btn {
+  @apply bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-lg rounded-lg w-1/4 px-8 py-4 text-zinc-100 transition hover:scale-105 hover:translate-y-1 hover:duration-300 ease-in uppercase;
 }

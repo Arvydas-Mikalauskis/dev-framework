@@ -31,11 +31,11 @@ const ProductPage = () => {
 
   return (
     <>
-      <section className="mt-24 pt-16 pl-16">
-        <div className="flex w-full">
-          <div className="pl-24">
+      <section className="container w-full h-fit mt-24 pt-16 pl-16 mb-24">
+        <div className="container flex">
+          <div className="">
             <img
-              className="rounded-md border border-gray-400 shadow-md"
+              className="rounded-lg border-2 border-slate-200 shadow-lg"
               src={product.data.image.url}
               alt="image of the product"
               width={380}
@@ -118,7 +118,7 @@ const ProductPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-28">
+        <div className="">
           <RelatedProducts />
         </div>
       </section>

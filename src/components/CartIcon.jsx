@@ -8,9 +8,9 @@ const CartIcon = () => {
 
   return (
     <div className="relative">
-      <Link to="#">
+      <div>
         <AiOutlineShoppingCart className="text-2xl" />
-      </Link>
+      </div>
       {cartItems.map((item) =>
         item.quantity > 0 ? (
           <div
