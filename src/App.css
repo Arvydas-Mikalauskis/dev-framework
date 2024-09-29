@@ -60,7 +60,7 @@
 }
 
 .form-input {
-  @apply border rounded-md shadow-md w-full p-2 mt-1 border-gray-200  py-2.5 pl-6   text-sm  font-medium focus:border-2 focus:border-yellow-300 focus:border-opacity-70 focus:outline-none focus:ring-0;
+  @apply border rounded-md shadow-md w-full p-2 mt-1 border-gray-200  py-2.5 pl-6   text-sm  font-medium focus:border-2 focus:border-teal-300 focus:border-opacity-70 focus:outline-none focus:ring-0;
 }
 
 .hero-text {
@@ -73,4 +73,12 @@
 
 .view-moreProducts-btn {
   @apply bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-lg rounded-lg w-1/4 px-8 py-4 text-zinc-100 transition hover:scale-105 hover:translate-y-1 hover:duration-300 ease-in uppercase;
+}
+
+.add-to-cart-btn {
+  @apply bg-gradient-to-r from-teal-500 to-teal-900 font-poppins font-semibold shadow-lg rounded-lg px-6 py-4 text-zinc-100 transition hover:scale-105 hover:translate-x-1 hover:duration-300 ease-in uppercase;
+}
+
+.contactForm-err {
+  @apply text-red-500 text-sm pl-2;
 }

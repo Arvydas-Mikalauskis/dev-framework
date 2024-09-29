@@ -16,34 +16,40 @@ const RelatedProducts = () => {
       setRelatedProducts(shuffled.slice(0, 4))
       console.log(data)
     }
-    fetchRelatedProducts().then(() => setLoading(false))
-  }, [])
+    fetchRelatedProducts()
+      .then(() => setLoading(false))
+      .then(window.scrollTo(0, 0))
+  }, [id])
 
   return (
-    <div className="mt-20">
-      <h4 className="text-xl text-slate-600">
+    <div className="my-20">
+      <h4 className="text-xl text-slate-700 font-semibold text-center pl-8">
         You might also be interested in these products:
       </h4>
       {loading ? (
         <Spinner loading={loading} />
       ) : (
-        <div className="flex gap-4 mt-4">
+        <div className="container max-w-7xl flex justify-center mx-auto gap-4 mt-4">
           {relatedProducts.map((product) => (
             <div
               key={product.id}
-              className="w-1/4 flex flex-col items-center justify-center bg-indigo-50 p-4 border rounded-md shadow-md"
+              className="w-1/4 flex flex-col items-center justify-center bg-indigo-50 p-8 border rounded-md shadow-lg"
             >
               <img
                 className="h-36 object-cover rounded-lg shadow-sm border-2 border-slate-300"
                 src={product.image.url}
-                alt="Eik nx"
+                alt="Alternative product"
                 width={150}
               />
-              <h5 className="text-lg font-semibold my-2">{product.title}</h5>
-              <p className="text-sm">{product.discountedPrice}$</p>
+              <h5 className="text-lg font-semibold my-2 font-roboto">
+                {product.title}
+              </h5>
+              <p className="text-sm font-medium mb-2">
+                Price: <span>{product.discountedPrice}$</span>
+              </p>
               <Link
                 to={`/product/${product.id}`}
-                className="bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-md rounded-lg px-4 py-2 mb-2 text-zinc-100 transition hover:scale-110 hover:translate-y-1 hover:duration-300 ease-in "
+                className="add-to-cart-btn text-sm p-2"
               >
                 View Product
               </Link>

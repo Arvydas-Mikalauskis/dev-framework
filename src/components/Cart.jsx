@@ -46,7 +46,10 @@ const Cart = ({ children }) => {
   }
 
   const getCartTotal = () => {
-    return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
+    return cartItems.reduce(
+      (acc, item) => acc + item.discountedPrice * item.quantity,
+      0
+    )
   }
 
   useEffect(() => {
