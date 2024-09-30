@@ -52,7 +52,7 @@
 }
 
 .search-input {
-  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12  text-sm shadow-lg font-medium focus:border-2 focus:border-purple-400 focus:border-opacity-50 focus:outline-none focus:ring-0;
+  @apply w-full rounded-md border border-gray-200 bg-white py-2.5 pl-10 pr-12  text-sm shadow-lg font-medium focus:border-2 focus:border-teal-500 focus:border-opacity-50 focus:outline-none focus:ring-0;
 }
 
 .form-label {
@@ -81,4 +81,8 @@
 
 .contactForm-err {
   @apply text-red-500 text-sm pl-2;
+}
+
+.checkoutSuccess-btn {
+  @apply text-teal-700 text-xl;
 }

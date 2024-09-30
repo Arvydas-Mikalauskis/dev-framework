@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
+import { calculateDiscount } from '../utils/price'
 
 export const CartContext = createContext()
 
@@ -69,7 +70,6 @@ const Cart = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
-        clearCart,
         getCartTotal,
       }}
     >

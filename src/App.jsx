@@ -10,8 +10,8 @@ import NotFoundPage from './components/pages/NotFoundPage'
 import ProductPage, { productLoader } from './components/pages/Productpage'
 import CartPage from './components/pages/CartPage'
 import ContactPage from './components/pages/ContactPage'
-
 import './App.css'
+import CheckoutPage from './components/pages/CheckoutPage'
 
 function App() {
   const router = createBrowserRouter(
@@ -25,6 +25,7 @@ function App() {
         />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
