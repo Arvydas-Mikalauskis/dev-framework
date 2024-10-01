@@ -34,7 +34,7 @@ const ProductsListings = () => {
   }
 
   return (
-    <section className="px-4 py-20">
+    <section className="px-4 py-20 z-0">
       <div className="container-xl lg:container m-auto">
         <h2
           id="featured-products"

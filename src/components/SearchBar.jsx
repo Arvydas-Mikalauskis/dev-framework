@@ -1,9 +1,13 @@
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
+import { debounce } from 'lodash'
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const SearchBar = ({ onSearchSelected }) => {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [items, setItems] = useState([])
+
+  const navigateToItem = useNavigate()
 
   useEffect(() => {
     if (searchTerm.trim() === '') {
@@ -20,46 +24,53 @@ const SearchBar = ({ onSearchSelected }) => {
           searchTerm
         )}`
       )
-      const data = await response.json()
-      setItems(data)
+      const result = await response.json()
+      console.log('Fetched data:', result.data)
+      const filteredItems = result.data
+        .filter((item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .map((item) => ({ id: item.id, name: item.title }))
+      setItems(filteredItems)
     } catch (error) {
       console.error('Error fetching suggestions', error)
     }
   }
 
+  const debounceFetch = debounce(fetchSuggestions, 200)
+
   const handleOnSearch = (string) => {
-    setSearchTerm(string)
+    debounceFetch(string)
   }
 
   const handleOnSelect = (item) => {
     console.log('Selected:', item)
-    onSearchSelected(item) // Call the parent handler
-  }
-
-  const handleOnHover = (item) => {
-    console.log('Hovered:', item)
-  }
-
-  const handleOnFocus = () => {
-    console.log('The search input is focused')
+    navigateToItem(`/product/${item.id}`)
   }
 
   const handleOnClear = () => {
-    console.log('Search has been cleared')
     setItems([])
   }
 
+  useEffect(() => {
+    console.log('Items in state:', items)
+  }, [items])
+
   return (
     <section className="w-full flex justify-center">
-      <div style={{ width: 300 }}>
+      <div className="w-1/2 z-10">
         <ReactSearchAutocomplete
+          styling={{
+            border: '1px solid #e5e7eb',
+            borderRadius: '3px',
+          }}
           items={items}
           onSearch={handleOnSearch}
           onSelect={handleOnSelect}
-          onHover={handleOnHover}
-          onFocus={handleOnFocus}
           onClear={handleOnClear}
-          placeholder="Type for items"
+          placeholder="Search for a product"
+          fuseOptions={{ keys: ['name'], threshold: 0.7 }}
+          autohighlight={true}
         />
       </div>
     </section>

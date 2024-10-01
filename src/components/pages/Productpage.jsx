@@ -31,30 +31,30 @@ const ProductPage = () => {
 
   return (
     <>
-      <div class="bg-transparent border-2 rounded-lg shadow-md  max-w-6xl mx-auto mt-32 py-8 mb-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex flex-col md:flex-row -mx-4">
-            <div class="md:flex-1 px-4">
-              <div class="h-[460px] rounded-lg bg-gray-300  mb-4">
+      <div className="bg-transparent border-2 rounded-lg shadow-md  max-w-6xl mx-auto mt-32 py-8 mb-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row -mx-4">
+            <div className="md:flex-1 px-4">
+              <div className="h-[460px] rounded-lg bg-gray-300  mb-4">
                 <img
-                  class="w-full h-full object-cover rounded-sm"
+                  className="w-full h-full object-cover rounded-sm"
                   src={product.data.image.url}
                   alt="Product Image"
                 />
               </div>
-              <div class="flex w-full items-center justify-center mb-4">
-                <div class="w-1/2 px-2">
+              <div className="flex w-full items-center justify-center mb-4">
+                <div className="w-1/2 px-2">
                   <button
                     onClick={() => addToCart(product.data)}
-                    class="w-full add-to-cart-btn"
+                    className="w-full add-to-cart-btn"
                   >
                     Add to Cart
                   </button>
                 </div>
               </div>
             </div>
-            <div class="md:flex-1 px-4">
-              <h2 class="text-2xl font-semibold text-slate-800 font-poppins  mb-2">
+            <div className="md:flex-1 px-4">
+              <h2 className="text-2xl font-semibold text-slate-800 font-poppins  mb-2">
                 {product.data.title}
               </h2>
               <div className="flex gap-4 mt-3 items-center text-lg mb-2 ">
@@ -93,7 +93,7 @@ const ProductPage = () => {
               </div>
               <div className="mt-2 font-medium font-roboto text-lg text-slate-600">
                 <span>Availability:</span>
-                <span class="text-slate-800 pl-2">In Stock</span>
+                <span className="text-slate-800 pl-2">In Stock</span>
               </div>
               <div>
                 <div className="flex pt-8 mb-6 gap-12 text-lg font-medium">
