@@ -5,7 +5,7 @@ import { SiKlarna } from 'react-icons/si'
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-slate-500 to-slate-900 border-t-2 border-zinc-100 shadow-sm">
-      <div className="container w-full py-10 mx-auto pr-12">
+      <div className="container w-full py-10 mx-auto ">
         <div className="flex flex-col justify-center items-center">
           <div className="text-zinc-50 text-2xl italic font-poppins mb-2">
             Snap<span className="text-red-400">Buy</span>

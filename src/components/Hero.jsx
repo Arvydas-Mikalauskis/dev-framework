@@ -2,8 +2,8 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div className="hero">
-      <div className=" max-w-4xl flex flex-col text-center mx-auto justify-center items-center py-28 ">
+    <div>
+      <div className=" max-w-4xl flex flex-col text-center mx-auto justify-center items-center py-24 sm:py-28 ">
         <h1 className="hero-text font-poppins text-4xl font-semibold">
           "Find it Fast, Buy it Smart."
         </h1>

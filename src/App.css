@@ -44,7 +44,7 @@
 }
 
 .active-link {
-  @apply text-teal-600;
+  @apply text-red-400;
 }
 
 .nav-link:hover {
@@ -72,7 +72,7 @@
 }
 
 .view-moreProducts-btn {
-  @apply bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-lg rounded-lg w-1/4 px-8 py-4 text-zinc-100 transition hover:scale-105 hover:translate-y-1 hover:duration-300 ease-in uppercase;
+  @apply bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-lg rounded-lg py-4 text-zinc-100 transition hover:scale-105 hover:translate-y-1 hover:duration-300 ease-in uppercase w-full sm:w-1/2 lg:w-1/3;
 }
 
 .add-to-cart-btn {
@@ -85,4 +85,8 @@
 
 .checkoutSuccess-btn {
   @apply text-teal-700 text-xl;
+}
+
+.navIcons {
+  @apply text-2xl;
 }

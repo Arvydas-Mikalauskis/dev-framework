@@ -8,8 +8,8 @@ const Product = ({ productListing }) => {
   )
 
   return (
-    <div className="bg-stone-100  rounded-xl shadow-md relative">
-      <div className="flex flex-col justify-between items-center h-full p-4 mb-6 border border-slate-300 rounded-lg shadow-md">
+    <div className="bg-stone-100 rounded-xl shadow-md relative">
+      <div className="flex flex-col justify-between items-center h-full p-3 sm:p-2.5 lg:p-4 sm:mb-1 xl:mb-3  border border-slate-300 rounded-lg shadow-md">
         <div className="flex flex-col items-center">
           <img
             src={productListing.image.url}
@@ -18,7 +18,7 @@ const Product = ({ productListing }) => {
             className="h-52 object-cover rounded-lg shadow-sm border-2 border-slate-300"
           />
           <h2 className="text-lg font-semibold my-2">{productListing.title}</h2>
-          <h3 className="text-lg italic font-roboto px-2 mt-2">
+          <h3 className="lg:text-lg italic font-roboto px-2 mt-2">
             {productListing.description}
           </h3>
         </div>
@@ -28,7 +28,7 @@ const Product = ({ productListing }) => {
               <p className="font-semibold font-roboto text-red-600 line-through">
                 From: {productListing.price}$
               </p>
-              <p className="font-semibold text-lg font-roboto text-slate-700">
+              <p className="font-semibold sm:text-sm lg:text-lg font-roboto text-slate-700">
                 Now: {productListing.discountedPrice}$
               </p>
               <p className="absolute right-0 top-0 p-2 bg-gradient-to-r from-red-400 to-red-600 font-semibold text-zinc-100 shadow-md rounded-md ">
@@ -36,7 +36,7 @@ const Product = ({ productListing }) => {
               </p>
             </>
           ) : (
-            <p className="text-lg font-semibold font-roboto">
+            <p className="text-sm lg:text-lg font-semibold font-roboto">
               {productListing.price}$
             </p>
           )}

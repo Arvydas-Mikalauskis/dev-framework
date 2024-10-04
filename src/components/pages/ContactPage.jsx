@@ -60,12 +60,12 @@ const ContactPage = () => {
   }
 
   return (
-    <section className="my-24">
-      <div className="flex flex-col items-center">
+    <section className="container mx-auto my-24">
+      <div className="flex flex-col items-center mx-auto">
         <h1 className="text-4xl font-semibold mb-2 font-poppins">
           Contact our team
         </h1>
-        <p className="text-lg font-roboto">
+        <p className="text-center text-lg mt-4 font-roboto text-slate-700 text-opacity-80">
           Need help with something? Get in touch with our friendly team and
           we'll give you an answer within 24 hours.
         </p>

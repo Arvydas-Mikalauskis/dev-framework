@@ -58,7 +58,7 @@ const SearchBar = () => {
 
   return (
     <section className="w-full flex justify-center">
-      <div className="w-1/2 z-10">
+      <div className="w-2/3  sm:w-1/2 z-10">
         <ReactSearchAutocomplete
           styling={{
             border: '1px solid #e5e7eb',

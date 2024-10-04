@@ -1,4 +1,4 @@
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { MdOutlineShoppingCart } from 'react-icons/md'
 import { CartContext } from './Cart'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
@@ -9,14 +9,14 @@ const CartIcon = () => {
   return (
     <div className="relative">
       <div>
-        <AiOutlineShoppingCart className="text-2xl" />
+        <MdOutlineShoppingCart className="navIcons" />
       </div>
       {cartItems.map((item) =>
         item.quantity > 0 ? (
           <div
             key={item.id}
-            className="absolute bg-gray-800 text-white text-xs font-bold rounded-full w-5 h-5 flex justify-center items-center"
-            style={{ top: '-10px', right: '-10px' }}
+            className="absolute bg-red-500 text-white text-xs font-bold rounded-full w-4 h-4 flex justify-center items-center"
+            style={{ top: '-8px', right: '-8px' }}
           >
             {item.quantity}
           </div>
