@@ -62,7 +62,7 @@ const ContactPage = () => {
   return (
     <section className="container mx-auto my-24">
       <div className="flex flex-col items-center mx-auto">
-        <h1 className="text-4xl font-semibold mb-2 font-poppins">
+        <h1 className="text-4xl text-center sm:text-5xl font-semibold mb-2 font-poppins">
           Contact our team
         </h1>
         <p className="text-center text-lg mt-4 font-roboto text-slate-700 text-opacity-80">
@@ -70,7 +70,7 @@ const ContactPage = () => {
           we'll give you an answer within 24 hours.
         </p>
       </div>
-      <div className="formContainer max-w-lg mx-auto mb-6 mt-16">
+      <div className="formContainer max-w-lg px-4 sm:px-0 mx-auto mb-6 mt-16">
         <form onSubmit={submitForm} className="flex flex-col gap-4 font-roboto">
           <div className="">
             <label htmlFor="fullName" className="form-label">

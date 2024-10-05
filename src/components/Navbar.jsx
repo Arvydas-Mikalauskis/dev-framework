@@ -12,7 +12,8 @@ const Navbar = () => {
       <div className="w-full h-10 flex justify-end gap-4 sm:gap-3 space-x-6 pr-4 sm:pr-8 md:pr-10 pt-12 ">
         <div className="flex text-black absolute top-10 left-10 text-xl sm:text-2xl italic font-poppins mb-2">
           <img src={Icon} alt="Website icon" className="hidden md:block pr-2" />
-          Snap<span className="text-red-400">Buy</span>
+          <span className="hidden sm:block">Snap</span>
+          <span className="text-red-400 hidden sm:block">Buy</span>
         </div>
         <NavLink to="/" className={linkClass}>
           <TiHome className="navIcons" />{' '}
