@@ -76,7 +76,7 @@
 }
 
 .add-to-cart-btn {
-  @apply bg-gradient-to-r from-teal-500 to-teal-900 font-poppins font-semibold shadow-lg rounded-lg px-6 py-4 text-zinc-100 transition hover:scale-105 hover:translate-x-1 hover:duration-300 ease-in uppercase;
+  @apply bg-gradient-to-r from-teal-600 to-teal-900 font-poppins font-semibold shadow-lg rounded-lg px-6 py-4 text-zinc-100 transition hover:scale-105 hover:translate-x-1 hover:duration-300 ease-in uppercase;
 }
 
 .checkoutBtn {
@@ -93,4 +93,13 @@
 
 .navIcons {
   @apply text-2xl;
+}
+
+.reviewCard {
+  @apply flex flex-col items-center justify-center bg-gradient-to-r from-slate-500 to-slate-700 font-roboto text-white text-opacity-90 text-sm mt-4 gap-2  p-2 rounded-md shadow-md;
+}
+
+.description-btn,
+.reviews-btn {
+  @apply bg-slate-700 rounded-md px-4 py-1 text-white text-sm font-semibold hover:bg-slate-900;
 }

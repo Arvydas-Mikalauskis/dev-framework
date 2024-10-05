@@ -31,19 +31,19 @@ const ProductPage = () => {
 
   return (
     <>
-      <div className="bg-transparent border-2 rounded-lg shadow-md  max-w-6xl mx-auto mt-32 py-8 mb-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto mt-32 py-8 mb-12">
+        <div className="max-w-5xl bg-indigo-50 border-2 border-slate-300 shadow-lg rounded-sm p-4 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
-              <div className="h-[460px] rounded-lg bg-gray-300  mb-4">
+              <div className="h-[460px] rounded-lg mb-4">
                 <img
-                  className="w-full h-full object-cover rounded-sm"
+                  className="w-full h-full object-cover rounded-md shadow-md"
                   src={product.data.image.url}
                   alt="Product Image"
                 />
               </div>
               <div className="flex w-full items-center justify-center mb-4">
-                <div className="w-1/2 px-2">
+                <div className="w-full pt-2 md:pt-0 md:w-1/2 px-2">
                   <button
                     onClick={() => addToCart(product.data)}
                     className="w-full add-to-cart-btn"
@@ -57,7 +57,7 @@ const ProductPage = () => {
               <h2 className="text-2xl font-semibold text-slate-800 font-poppins  mb-2">
                 {product.data.title}
               </h2>
-              <div className="flex gap-4 mt-3 items-center text-lg mb-2 ">
+              <div className="flex gap-4 mt-3 items-center font-roboto text-lg mb-2 ">
                 <div className="flex items-center text-gray-600">
                   <p className="italic">
                     <span>User rating:</span> {product.data.rating}
@@ -73,7 +73,7 @@ const ProductPage = () => {
                   </ul>
                 </div>
               </div>
-              <div className="flex items-center mt-4 gap-2">
+              <div className="flex items-center font-roboto mt-4 gap-2">
                 <h2 className="text-lg font-semibold">Price:</h2>
                 {hasDiscount ? (
                   <>
@@ -96,24 +96,28 @@ const ProductPage = () => {
                 <span className="text-slate-800 pl-2">In Stock</span>
               </div>
               <div>
-                <div className="flex pt-8 mb-6 gap-12 text-lg font-medium">
-                  <button onClick={handleDescription}>Description</button>
-                  <button onClick={handleReviews}>Reviews</button>
+                <div className="flex pt-8 mb-6 gap-12 text-lg font-roboto font-medium">
+                  <button
+                    className="description-btn"
+                    onClick={handleDescription}
+                  >
+                    Description
+                  </button>
+                  <button className="reviews-btn" onClick={handleReviews}>
+                    Reviews
+                  </button>
                 </div>
                 <div>
-                  <div className="w-full">
+                  <div className="w-full font-roboto">
                     {showDescription ? (
-                      <p className="text-xl font-roboto">
+                      <p className="text-xl md:my-0 my-12">
                         {product.data.description}
                       </p>
                     ) : (
                       <div className="">
                         {product.data.reviews.length > 0 ? (
                           product.data.reviews.map((review, index) => (
-                            <div
-                              key={index}
-                              className="flex flex-col items-center justify-center text-sm mt-4 gap-2 bg-white p-2 rounded-md shadow-md"
-                            >
+                            <div key={index} className="reviewCard">
                               <h4 className="italic">{`"${review.description}"`}</h4>
                               <p>{review.username}</p>
                               <div className="flex items-center">
