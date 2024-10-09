@@ -35,7 +35,7 @@ const ProductPage = () => {
         <div className="max-w-5xl bg-indigo-50 border-2 border-slate-300 shadow-lg rounded-sm p-4 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row -mx-4">
             <div className="md:flex-1 px-4">
-              <div className="h-[460px] rounded-lg mb-4">
+              <div className="h-[280px] sm:h-[460px] rounded-lg mb-4">
                 <img
                   className="w-full h-full object-cover rounded-md shadow-md"
                   src={product.data.image.url}

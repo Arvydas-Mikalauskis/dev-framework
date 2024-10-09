@@ -8,20 +8,20 @@ const CheckoutPage = () => {
   const { getCartTotal } = useContext(CartContext)
 
   return (
-    <div>
-      <div className="container flex flex-col gap-8 items-center justify-center my-32 mx-auto">
+    <div className="container w-full mx-auto text-center">
+      <div className="flex flex-col gap-8 items-center justify-center my-32 ">
         <img src={Delivery} alt="Image of animated delivery guy" width={320} />
-        <h1 className="text-5xl font-roboto font-semibold text-slate-700">
+        <h1 className="text-3xl md:text-5xl font-roboto font-semibold text-slate-700">
           Payment successful
         </h1>
-        <p className="text-slate-600 text-xl">
+        <p className="text-slate-600 text-lg md:text-xl">
           Your order has been confirmed and will be processed within 24 hours
           during working days.
         </p>
         <p className="font-semibold text-md text-slate-700">
           Thank you for shopping with us!
         </p>
-        <div className="flex flex-col w-1/3 items-center justify-center gap-2 bg-white border-2 shadow-md rounded-md font-roboto font-medium p-8">
+        <div className="flex flex-col w-2/3 lg:w-1/2 items-center justify-center gap-2 bg-white border-2 shadow-md rounded-md font-roboto font-medium p-8">
           <div>
             Order number: <span>123456</span>
           </div>

@@ -23,7 +23,7 @@ const RelatedProducts = () => {
 
   return (
     <div className="my-20">
-      <h4 className="text-xl text-slate-700 font-semibold text-center sm:pl-8">
+      <h4 className="text-lg sm:text-xl text-slate-700 font-semibold text-center sm:pl-8">
         You might also be interested in these products:
       </h4>
       {loading ? (
@@ -33,7 +33,7 @@ const RelatedProducts = () => {
           {relatedProducts.map((product) => (
             <div
               key={product.id}
-              className="w-2/3 sm:w-full flex flex-col items-center justify-center mx-auto text-center bg-indigo-50 p-4 lg:p-8 border rounded-md shadow-lg"
+              className="w-3/4 sm:w-full flex flex-col items-center justify-center mx-auto text-center bg-indigo-50 p-4 lg:p-8 border rounded-md shadow-lg"
             >
               <img
                 className="h-52 w-52 sm:h-36 sm:w-36 object-cover rounded-lg shadow-sm border-2 border-slate-300"

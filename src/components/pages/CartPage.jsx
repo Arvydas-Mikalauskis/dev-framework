@@ -9,18 +9,22 @@ import { FaArrowLeft } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const CartPage = () => {
-  const { cartItems, addToCart, removeFromCart, getCartTotal } =
-    useContext(CartContext)
+  const {
+    cartItems,
+    addToCart,
+    reduceFromCart,
+    removeFromCart,
+    getCartTotal,
+    clearCart,
+  } = useContext(CartContext)
 
   return (
     <>
       <div className="container-xl mx-auto p-6 my-24">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* <!-- Left Column: Cart Items --> */}
           <div className="space-y-6 md:col-start-1 md:col-end-4">
             <h2 className="text-2xl font-semibold">Your Cart</h2>
 
-            {/* Map over the items from the API */}
             {cartItems.map((item) => (
               <div
                 key={item.id}
@@ -40,7 +44,6 @@ const CartPage = () => {
                   </p>
                 </div>
                 <div className="sm:ml-auto flex items-center">
-                  {/* Quantity input and remove button */}
                   <div className="flex flex-col items-center text-xl  sm:mr-16 my-2 sm:my-0">
                     <div>
                       <h4>Quantity:</h4>
@@ -48,7 +51,7 @@ const CartPage = () => {
                     <div className="flex gap-4">
                       <button
                         onClick={() => {
-                          removeFromCart(item)
+                          reduceFromCart(item)
                         }}
                       >
                         <TbSquareRoundedMinusFilled />
@@ -67,7 +70,7 @@ const CartPage = () => {
                     onClick={() => {
                       removeFromCart(item)
                     }}
-                    className="text-red-600 text-xl absolute sm:relative top-3 sm:top-0 right-3 sm:right-0"
+                    className="text-red-600 text-xl absolute sm:relative bottom-5 sm:top-0 right-3 sm:right-0"
                   >
                     <IoTrashOutline />
                   </button>
@@ -76,7 +79,6 @@ const CartPage = () => {
             ))}
           </div>
 
-          {/* <!-- Right Column: Summary --> */}
           <div className="bg-white w-full md:col-start-4 md:col-end-6  mx-auto p-6 rounded-lg shadow-md font-roboto">
             <h2 className="text-2xl text-center pb-4 font-semibold">
               Order Summary
@@ -108,7 +110,11 @@ const CartPage = () => {
                 >
                   <FaArrowLeft /> Continue Shopping
                 </Link>
-                <Link to={'/checkout'} className="checkoutBtn">
+                <Link
+                  to={'/checkout'}
+                  onClick={clearCart}
+                  className="checkoutBtn"
+                >
                   Proceed to Checkout
                 </Link>
               </div>

@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { calculateDiscount } from '../utils/price'
+import { parse } from 'postcss'
 
 export const CartContext = createContext()
 
@@ -26,7 +27,7 @@ const Cart = ({ children }) => {
     }
   }
 
-  const removeFromCart = (item) => {
+  const reduceFromCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id)
 
     if (isItemInCart.quantity === 1) {
@@ -42,15 +43,20 @@ const Cart = ({ children }) => {
     }
   }
 
+  const removeFromCart = (item) => {
+    setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id))
+  }
+
   const clearCart = () => {
     setCartItems([])
   }
 
   const getCartTotal = () => {
-    return cartItems.reduce(
+    const total = cartItems.reduce(
       (acc, item) => acc + item.discountedPrice * item.quantity,
       0
     )
+    return parseFloat(total.toFixed(2))
   }
 
   useEffect(() => {
@@ -69,8 +75,10 @@ const Cart = ({ children }) => {
       value={{
         cartItems,
         addToCart,
+        reduceFromCart,
         removeFromCart,
         getCartTotal,
+        clearCart,
       }}
     >
       {children}
