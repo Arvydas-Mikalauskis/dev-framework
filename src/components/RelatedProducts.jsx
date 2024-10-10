@@ -14,7 +14,6 @@ const RelatedProducts = () => {
       const data = await res.json()
       const shuffled = data.data.sort(() => 0.5 - Math.random())
       setRelatedProducts(shuffled.slice(0, 4))
-      console.log(data)
     }
     fetchRelatedProducts()
       .then(() => setLoading(false))

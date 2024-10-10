@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const CheckoutPage = () => {
   const todaysDate = new Date().toLocaleDateString()
-  const { getCartTotal } = useContext(CartContext)
+  const { getCartTotal, clearCart } = useContext(CartContext)
 
   return (
     <div className="container w-full mx-auto text-center">
@@ -35,7 +35,7 @@ const CheckoutPage = () => {
           </div>
           <hr className="w-1/2" />
           <div className="mt-4">
-            <Link to={'/'} className="checkoutSuccess-btn">
+            <Link to={'/'} onClick={clearCart} className="checkoutSuccess-btn">
               Continue shopping
             </Link>
           </div>

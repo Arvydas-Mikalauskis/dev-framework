@@ -19,11 +19,9 @@ const ProductsListings = () => {
         const data = await res.json()
         setProducts(data.data)
       } catch (error) {
-        console.log('Error fetching products', error)
+        return error
       } finally {
         setLoading(false)
-        console.log('Done fetching products')
-        console.log(products)
       }
     }
 

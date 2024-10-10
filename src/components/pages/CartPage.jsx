@@ -111,11 +111,7 @@ const CartPage = () => {
                   >
                     <FaArrowLeft /> Continue Shopping
                   </Link>
-                  <Link
-                    to={'/checkout'}
-                    onClick={clearCart}
-                    className="checkoutBtn"
-                  >
+                  <Link to={'/checkout'} className="checkoutBtn">
                     Proceed to Checkout
                   </Link>
                 </div>

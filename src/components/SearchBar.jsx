@@ -25,7 +25,7 @@ const SearchBar = () => {
         )}`
       )
       const result = await response.json()
-      console.log('Fetched data:', result.data)
+
       const filteredItems = result.data
         .filter((item) =>
           item.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -44,7 +44,6 @@ const SearchBar = () => {
   }
 
   const handleOnSelect = (item) => {
-    console.log('Selected:', item)
     navigateToItem(`/product/${item.id}`)
   }
 
@@ -52,9 +51,7 @@ const SearchBar = () => {
     setItems([])
   }
 
-  useEffect(() => {
-    console.log('Items in state:', items)
-  }, [items])
+  useEffect(() => {}, [items])
 
   return (
     <section className="w-full flex justify-center">
