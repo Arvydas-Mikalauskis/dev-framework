@@ -22,7 +22,7 @@ const Product = ({ productListing }) => {
             {productListing.description}
           </h3>
         </div>
-        <div className="priceSection flex flex-col justify-center items-center gap-2 mt-auto">
+        <div className="priceSection flex flex-col justify-center items-center gap-2 my-4 sm:my-0 sm:mt-auto">
           {hasDiscount ? (
             <>
               <p className="font-semibold font-roboto text-red-600 line-through">
@@ -42,7 +42,7 @@ const Product = ({ productListing }) => {
           )}
           <Link
             to={`/product/${productListing.id}`}
-            className="bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-md rounded-lg px-4 py-2 mb-2 text-zinc-100 transition hover:scale-110 hover:translate-y-1 hover:duration-300 ease-in "
+            className="bg-gradient-to-r from-slate-500 to-slate-900 font-roboto font-semibold shadow-md rounded-lg px-4 py-2 mt-3 mb-2 text-zinc-100 transition hover:scale-110 hover:translate-y-1 hover:duration-300 ease-in "
           >
             View Product
           </Link>

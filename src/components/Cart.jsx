@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { calculateDiscount } from '../utils/price'
-import { parse } from 'postcss'
+import { toast } from 'react-toastify'
 
 export const CartContext = createContext()
 
@@ -24,6 +24,7 @@ const Cart = ({ children }) => {
       )
     } else {
       setCartItems([...cartItems, { ...item, quantity: 1 }])
+      toast.success('Item added to cart')
     }
   }
 
